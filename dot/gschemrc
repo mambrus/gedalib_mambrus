@@ -1,0 +1,83 @@
+; log-window string
+;
+; Controls if the log message window is mapped when gschem is started up
+; Possible options:
+;       startup - opened up when gschem starts
+;       later   - NOT opened up when gschem starts
+;                 (can be opened by Options/Show Log Window)
+;
+(log-window "later")
+;(logging-destination "both")
+(logging-destination "tty")
+
+
+;; Make the gschem color maps more user-friendly
+(color-map-make-friendly print-color-map)
+
+; Load up a color scheme which has a dark (black) background.
+; Comment out the first line and comment in the second line for a
+; light (almost white) background.  The dark background is the
+; original look.
+;
+;(load (build-path geda-rc-path "gschem-colormap-darkbg")) ; dark background
+(load (build-path geda-rc-path "gschem-colormap-lightbg")) ; light background
+;(load (build-path geda-rc-path "gschem-colormap-bw")) ; light background, bw
+
+;
+; End of color section
+;
+
+; zoom-with-pan string
+;
+; Sets the zoom in and zoom out functions to pan the display and then zoom.
+; Basically zoom in / out where the mouse pointer sits on the display.
+;
+;(zoom-with-pan "disabled")
+
+
+
+; text-size number
+;
+; Sets the default text size.
+;
+(text-size 8)
+
+
+
+; output-color string
+;
+; Controls if output (postscript) is color (enabled) or black/white (disabled)
+;
+;(output-color "disabled")
+(output-color "enabled")
+
+(load-from-path "color-map.scm")
+(load (build-path geda-rc-path "print-colormap-lightbg")) ; light background
+
+
+
+; Automatically place a titleblock (or other components) when creating
+; a new page.
+; Comment in these lines if you want gschem to automatically place a titleblock
+; when you create a new _empty_ page.
+; Users can customize the default titleblock by adding the following line
+; (without the semi-colons at the beginning) to the gschemrc file:
+;; (define default-titleblock "title-A4.sym")
+;; Change "title-A4.sym" by the name of your prefered titleblock!
+;
+; If you don't want a titleblock to be added automatically, then add one of 
+; the following lines to your gschemrc file (without the semicolon).
+; There are several ways, so just choose one:
+;   (define default-titleblock "")
+;   (define default-titleblock '())
+;   (define default-titleblock #f)
+;
+
+; Define page-side by defining border. Various templates can be found here:
+; /usr/share/gEDA/sym/titleblock/*.sym
+
+;(define default-titleblock "title-B.sym")
+(define default-titleblock "title-bordered-C.sym")
+
+
+

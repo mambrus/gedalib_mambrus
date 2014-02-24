@@ -28,6 +28,11 @@ Structure similar to this root, but with symbols for the sub-modules only.
 Sources and references for automatic symbol-generation based on tragesym
 script. See 'man tragesym'
 
+### dot
+Template dot-files that can go into your ~/.gEDA/ directory. Please read
+README.md in that directory for further details and please review each file
+before using it as it will affect how gEDA works for you.
+
 To use:
 -------
 
