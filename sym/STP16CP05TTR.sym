@@ -1,0 +1,289 @@
+v 20121123 2
+P -100 2500 200 2500 1 0 0
+{
+T 105 2545 5 8 1 1 0 6 1
+pinnumber=3
+T 100 2450 5 8 0 1 90 6 1
+pinseq=3
+T 330 2445 9 8 1 1 0 0 1
+pinlabel=CLK
+T 475 2500 5 8 0 1 90 5 1
+pintype=clk
+}
+L 300 2500 200 2425 3 0 0 0 -1 -1
+L 300 2500 200 2575 3 0 0 0 -1 -1
+P -100 2300 200 2300 1 0 0
+{
+T 105 2345 5 8 1 1 0 6 1
+pinnumber=4
+T 100 2250 5 8 0 1 90 6 1
+pinseq=4
+T 330 2245 9 8 1 1 0 0 1
+pinlabel=LE/DM1
+T 400 2300 5 8 0 1 90 5 1
+pintype=in
+}
+P 600 3300 600 3100 1 0 0
+{
+T 650 3100 5 8 1 1 0 0 1
+pinnumber=21
+T 550 3100 5 8 0 1 0 6 1
+pinseq=21
+T 600 2950 9 8 1 1 0 5 1
+pinlabel=\_OE/DM2\_
+T 600 2800 5 8 0 1 0 5 1
+pintype=in
+}
+V 600 3050 50 6 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+P 1200 3300 1200 3000 1 0 0
+{
+T 1250 3100 5 8 1 1 0 0 1
+pinnumber=24
+T 1150 3100 5 8 0 1 0 6 1
+pinseq=24
+T 1200 2950 9 8 1 1 0 5 1
+pinlabel=VDD
+T 1200 2800 5 8 0 1 0 5 1
+pintype=pwr
+}
+P 2100 1900 1800 1900 1 0 0
+{
+T 1900 1950 5 8 1 1 0 0 1
+pinnumber=5
+T 1900 1850 5 8 0 1 0 2 1
+pinseq=5
+T 1750 1850 9 8 1 1 0 6 1
+pinlabel=\_OUT0\_
+T 1750 1900 5 8 0 1 0 8 1
+pintype=out
+}
+P 2100 1700 1800 1700 1 0 0
+{
+T 1900 1750 5 8 1 1 0 0 1
+pinnumber=6
+T 1900 1650 5 8 0 1 0 2 1
+pinseq=6
+T 1750 1650 9 8 1 1 0 6 1
+pinlabel=\_OUT1\_
+T 1750 1700 5 8 0 1 0 8 1
+pintype=out
+}
+P 2100 1500 1800 1500 1 0 0
+{
+T 1900 1550 5 8 1 1 0 0 1
+pinnumber=7
+T 1900 1450 5 8 0 1 0 2 1
+pinseq=7
+T 1750 1450 9 8 1 1 0 6 1
+pinlabel=\_OUT2\_
+T 1750 1500 5 8 0 1 0 8 1
+pintype=out
+}
+P 2100 1300 1800 1300 1 0 0
+{
+T 1900 1350 5 8 1 1 0 0 1
+pinnumber=8
+T 1900 1250 5 8 0 1 0 2 1
+pinseq=8
+T 1750 1250 9 8 1 1 0 6 1
+pinlabel=\_OUT3\_
+T 1750 1300 5 8 0 1 0 8 1
+pintype=out
+}
+P 2100 1100 1800 1100 1 0 0
+{
+T 1900 1150 5 8 1 1 0 0 1
+pinnumber=9
+T 1900 1050 5 8 0 1 0 2 1
+pinseq=9
+T 1750 1050 9 8 1 1 0 6 1
+pinlabel=\_OUT4\_
+T 1750 1100 5 8 0 1 0 8 1
+pintype=out
+}
+P 2100 900 1800 900 1 0 0
+{
+T 1900 950 5 8 1 1 0 0 1
+pinnumber=10
+T 1900 850 5 8 0 1 0 2 1
+pinseq=10
+T 1750 850 9 8 1 1 0 6 1
+pinlabel=\_OUT5\_
+T 1750 900 5 8 0 1 0 8 1
+pintype=out
+}
+P 2100 700 1800 700 1 0 0
+{
+T 1900 750 5 8 1 1 0 0 1
+pinnumber=11
+T 1900 650 5 8 0 1 0 2 1
+pinseq=11
+T 1750 650 9 8 1 1 0 6 1
+pinlabel=\_OUT6\_
+T 1750 700 5 8 0 1 0 8 1
+pintype=out
+}
+P 2100 500 1800 500 1 0 0
+{
+T 1900 550 5 8 1 1 0 0 1
+pinnumber=12
+T 1900 450 5 8 0 1 0 2 1
+pinseq=12
+T 1750 450 9 8 1 1 0 6 1
+pinlabel=\_OUT7\_
+T 1750 500 5 8 0 1 0 8 1
+pintype=out
+}
+P 2100 2700 1800 2700 1 0 0
+{
+T 1900 2750 5 8 1 1 0 0 1
+pinnumber=22
+T 1900 2650 5 8 0 1 0 2 1
+pinseq=22
+T 1750 2650 9 8 1 1 0 6 1
+pinlabel=SDO
+T 1750 2700 5 8 0 1 0 8 1
+pintype=out
+}
+P -100 1900 200 1900 1 0 0
+{
+T 100 1950 5 8 1 1 0 6 1
+pinnumber=13
+T 100 1850 5 8 0 1 0 8 1
+pinseq=13
+T 250 1850 9 8 1 1 0 0 1
+pinlabel=\_OUT8\_
+T 250 1900 5 8 0 1 0 2 1
+pintype=out
+}
+P -100 1700 200 1700 1 0 0
+{
+T 100 1750 5 8 1 1 0 6 1
+pinnumber=14
+T 100 1650 5 8 0 1 0 8 1
+pinseq=14
+T 250 1650 9 8 1 1 0 0 1
+pinlabel=\_OUT9\_
+T 250 1700 5 8 0 1 0 2 1
+pintype=out
+}
+P -100 1500 200 1500 1 0 0
+{
+T 100 1550 5 8 1 1 0 6 1
+pinnumber=15
+T 100 1450 5 8 0 1 0 8 1
+pinseq=15
+T 250 1450 9 8 1 1 0 0 1
+pinlabel=\_OUT10\_
+T 250 1500 5 8 0 1 0 2 1
+pintype=out
+}
+P -100 1300 200 1300 1 0 0
+{
+T 100 1350 5 8 1 1 0 6 1
+pinnumber=16
+T 100 1250 5 8 0 1 0 8 1
+pinseq=16
+T 250 1250 9 8 1 1 0 0 1
+pinlabel=\_OUT11\_
+T 250 1300 5 8 0 1 0 2 1
+pintype=out
+}
+P -100 1100 200 1100 1 0 0
+{
+T 100 1150 5 8 1 1 0 6 1
+pinnumber=17
+T 100 1050 5 8 0 1 0 8 1
+pinseq=17
+T 250 1050 9 8 1 1 0 0 1
+pinlabel=\_OUT12\_
+T 250 1100 5 8 0 1 0 2 1
+pintype=out
+}
+P -100 900 200 900 1 0 0
+{
+T 100 950 5 8 1 1 0 6 1
+pinnumber=18
+T 100 850 5 8 0 1 0 8 1
+pinseq=18
+T 250 850 9 8 1 1 0 0 1
+pinlabel=\_OUT13\_
+T 250 900 5 8 0 1 0 2 1
+pintype=out
+}
+P -100 700 200 700 1 0 0
+{
+T 100 750 5 8 1 1 0 6 1
+pinnumber=19
+T 100 650 5 8 0 1 0 8 1
+pinseq=19
+T 250 650 9 8 1 1 0 0 1
+pinlabel=\_OUT14\_
+T 250 700 5 8 0 1 0 2 1
+pintype=out
+}
+P -100 500 200 500 1 0 0
+{
+T 100 550 5 8 1 1 0 6 1
+pinnumber=20
+T 100 450 5 8 0 1 0 8 1
+pinseq=20
+T 250 450 9 8 1 1 0 0 1
+pinlabel=\_OUT15\_
+T 250 500 5 8 0 1 0 2 1
+pintype=out
+}
+P -100 2700 200 2700 1 0 0
+{
+T 100 2750 5 8 1 1 0 6 1
+pinnumber=2
+T 100 2650 5 8 0 1 0 8 1
+pinseq=2
+T 325 2650 9 8 1 1 0 0 1
+pinlabel=SDI
+T 250 2700 5 8 0 1 0 2 1
+pintype=in
+}
+P 1200 -100 1200 200 1 0 0
+{
+T 1250 100 5 8 1 1 0 2 1
+pinnumber=1
+T 1150 100 5 8 0 1 0 8 1
+pinseq=1
+T 1200 250 9 8 1 1 0 3 1
+pinlabel=GND
+T 1200 400 5 8 0 1 0 3 1
+pintype=pwr
+}
+P 700 -100 700 200 1 0 0
+{
+T 750 100 5 8 1 1 0 2 1
+pinnumber=23
+T 650 100 5 8 0 1 0 8 1
+pinseq=23
+T 700 250 9 8 1 1 0 3 1
+pinlabel=R-EXT
+T 700 400 5 8 0 1 0 3 1
+pintype=in
+}
+B 200 200 1600 2800 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 1750 50 8 10 1 1 0 6 1
+refdes=U?
+T 2875 0 9 10 1 0 180 0 1
+STP16CP05TTR
+T 1000 1600 5 10 0 0 0 0 1
+device=7-SEG LED driver (SIO)
+T 1000 1800 5 10 0 0 0 0 1
+footprint=TSSOP24
+T 1000 2000 5 10 0 0 0 0 1
+author=Michael Ambus <ambrmi09 AT gmail.com>
+T 1000 2200 5 10 0 0 0 0 1
+documentation=http://www.farnell.com/datasheets/1690168.pdf
+T 1000 2400 5 10 0 0 0 0 1
+description=Low voltage 16-bit constant current LED sink driver
+T 1000 2600 5 10 0 0 0 0 1
+numslots=0
+T 1000 2800 5 10 0 0 0 0 1
+dist-license=cc0
+T 1000 3000 5 10 0 0 0 0 1
+use-license=unlimited
