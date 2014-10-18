@@ -1,5 +1,5 @@
-Ambrus gEDA symbol & sub-module library
-=======================================
+mambrus gEDA symbol, sub-module & footprint library
+===================================================
 
 Directory & file structure:
 ---------------------------
