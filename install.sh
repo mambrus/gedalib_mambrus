@@ -46,7 +46,7 @@ set -e
 
 if [ "no$INSTALLED_GAFRC" == "no" ]; then
 	echo "Adding this symbol-library to your system"
-	dover cat dot/gafrc >> ~/.gEDA/gafrc
+	cat dot/gafrc >> ~/.gEDA/gafrc
 else
 	echo "System already knows about this library."
 	echo "Skipping modifying $(echo ~/.gEDA/gafrc)"
