@@ -68,6 +68,8 @@ function install_rc() {
 		set -e
 		if [ $RC -eq 0 ]; then
 			dover cp ${TRG_RCFILE} ${TRG_RCFILE}_${TS}.bak
+			# If link, make sure it's removed
+			rm -f ${TRG_RCFILE}
 			dover cp ${SRC_RCFILE} ${TRG_RCFILE}
 		#else
 		#	do_second_choice
