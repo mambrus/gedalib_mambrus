@@ -1,2 +1,13 @@
 *.*~
+#Autoproduced by autoconf
+dot/gafrc
+#Produced by geda-tools
+*.save
+*.net
+*.pcb.bak*
+*.gbr
+*.cnc
+*.cmd
+*.bom
+*.xy
 #*
