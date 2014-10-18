@@ -1,0 +1,125 @@
+# This is the template file for creating symbols with tragesym						
+# every line starting with '#' is a comment line.						
+# save it as text file with tab separated cells and start tragesym						
+# More info:						
+# http://wiki.geda-project.org/geda:tragesym_tutorial						
+# https://help.gnome.org/users/gnumeric/stable/sect-file-textExport.html.en						
+# http://wiki.geda-project.org/geda:master_attributes_list#pintype						
+						
+[options]						
+# wordswap swaps labels if the pin is on the right side an looks like this:						
+#   "PB1 (CLK)". That's useful for micro controller port labels						
+# rotate_labels rotates the pintext of top and bottom pins						
+#   this is useful for large symbols like FPGAs with more than 100 pins						
+# sort_labels will sort the pins by it's labels						
+#   useful for address ports, busses, ...						
+wordswap	yes					
+rotate_labels	no					
+sort_labels	yes					
+generate_pinseq	yes					
+sym_width	6400					
+pinwidthvertical	200					
+pinwidthhorizontal	400					
+						
+[geda_attr]						
+# name will be printed in the top of the symbol						
+# if you have a device with slots, you'll have to use slot= and slotdef=						
+# use comment= if there are special information you want to add						
+version	20141018 1					
+device	STM32F103Rx					
+name	STM32F103 (QFP)					
+refdes	U?					
+footprint	LQFP64					
+description	STM32 Cortex m3					
+documentation	STM32F103RBT6.pdf					
+author	Michael Ambus <ambrmi09 AT gmail.com>					
+dist-license	cc0					
+use-license	unlimited					
+numslots	0					
+#slot	1					
+#slotdef	1:					
+#slotdef	2:					
+#slotdef	3:					
+#slotdef	4:					
+#comment						
+#comment						
+#comment						
+						
+[pins]						
+# tabseparated list of pin descriptions						
+#						
+# pinnr is the physical number of the pin						
+# seq is the pinseq= attribute, leave it blank if it doesn't matter						
+# type can be (in, out, io, oc, oe, pas, tp, tri, clk, pwr)						
+# style can be (line,dot,clk,dotclk,none). none if only want to add a net						
+# posit. can be (l,r,t,b) or empty for nets						
+# net specifies the name of the net. Vcc or GND for example.						
+# label represents the pinlabel.						
+#	negation lines can be added with "\_" example: \_enable\_ 					
+#	if you want to write a "\" use "\\" as escape sequence					
+#						
+#pinnr	seq	type	style	posit.	net	label
+13		pwr	line	l		VDDA
+12		pwr	line	l		VSSA
+1		pwr	line	l		VBAT
+32		pwr	line	l		VDD_1
+48		pwr	line	l		VDD_2
+64		pwr	line	l		VDD_3
+19		pwr	line	l		VDD_4
+31		pwr	line	l		VSS_1
+47		pwr	line	l		VSS_2
+63		pwr	line	l		VSS_3
+18		pwr	line	l		VSS_4
+7		io	line	l		NRST
+60		in	line	l		BOOT0
+14		io	line	l		PA0-WKUP/USART2_CTS/ADC_IN0/TIM2_CH1_ETR
+15		io	line	l		PA1/USART2_RTS/ADC_IN1/TIM2_CH2
+16		io	line	l		PA2/USART2_TX/ADC_IN2/TIM2_CH3
+17		io	line	l		PA3/USART2_RX/ADC_IN3/TIM2_CH4
+20		io	line	l		PA4/SPI1_NSS/USART2_CK/ADC_IN4
+21		io	line	l		PA5/SPI1_SCK/ADC_IN5
+22		io	line	l		PA6/SPI1_MISO/ADC_IN6/TIM3_CH1
+23		io	line	l		PA7/SPI1_MOSI/ADC_IN7/TIM3_CH2
+41		io	line	l		PA8/USART1_CK/TIM1_CH1/MCO
+42		io	line	l		PA9/USART1_TX/TIM1_CH2
+43		io	line	l		PA10/USART1_RX/TIM1_CH3
+44		io	line	l		PA11/USART1_CTS/CANRX/USBDM/TIM1_CH4
+45		io	line	l		PA12/USART1_RTS/CANTX/USBDP/TIM1_ETR
+46		io	line	l		PA13/JTMS/SWDIO
+49		io	line	l		PA14/JTCK/SWCLK
+50		io	line	l		PA15/JTDI
+26		io	line	r		PB0/ADC_IN8/TIM3_CH3
+27		io	line	r		PB1/ADC_IN9/TIM3_CH4
+28		io	line	r		PB2/BOOT1
+55		io	line	r		PB3/JTDO/TRACESWO
+56		io	line	r		PB4/JNTRST
+57		io	line	r		PB5/I2C1_SMBAl
+58		io	line	r		PB6/I2C1_SCL/TIM4_CH1
+59		io	line	r		PB7/I2C1_SDA/TIM4_CH2
+61		io	line	r		PB8/TIM4_CH3
+62		io	line	r		PB9/TIM4_CH4
+29		io	line	r		PB10/I2C2_SCL/USART3_TX
+30		io	line	r		PB11/I2C2_SDA/USART3_RX
+33		io	line	r		PB12/SPI2_NSS/I2C2_SMBAl/USART3_CK/TIM1_BKIN
+34		io	line	r		PB13/SPI2_SCK/USART3_CTS/TIM1_CH1N
+35		io	line	r		PB14/SPI2_MISO/USART3_RTS/TIM1_CH2N
+36		io	line	r		PB15/SPI2_MOSI/TIM1_CH3N
+8		io	line	r		PC0/ADC_IN10
+9		io	line	r		PC1/ADC_IN11
+10		io	line	r		PC2/ADC_IN12
+11		io	line	r		PC3/ADC_IN13
+24		io	line	r		PC4/ADC_IN14
+25		io	line	r		PC5/ADC_IN15
+37		io	line	r		PC6
+38		io	line	r		PC7
+39		io	line	r		PC8
+40		io	line	r		PC9
+51		io	line	r		PC10
+52		io	line	r		PC11
+53		io	line	r		PC12
+2		io	line	r		PC13-ANTI_TAMP(4)
+3		io	line	r		PC14-OSC32_IN(4)
+4		io	line	r		PC15-OSC32_OUT(4)
+5		io	line	r		PD0/OSC_IN
+6		io	line	r		PD1/OSC_OUT
+54		io	line	r		PD2/TIM3_ETR
