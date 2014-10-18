@@ -34,14 +34,17 @@ F=~/.gEDA/gnetlistrc
 GAFRC_DIR=$(cat dot/gafrc | tr '"' ' ' | awk '{print $2}')
 if [ -L $F ]; then
 	#If link, make sure it's not broken
-	if ! readlink -q $F >/dev/null ; then
-		echo "$F: is a bad link. Replacing with fresh file" >/dev/stderr
-		touch $F
+	if readlink -q $F >/dev/null ; then
+		echo "$F: is a bad link. Replacing with fresh file"
+		dover rm -f $F
+		dover touch $F
 	fi
 fi
-INSTALLED_GAFRC={"$(grep ${GAFRC_DIR} ~/.gEDA/gafrc)"-"no"}
+set +e
+INSTALLED_GAFRC=$(grep ${GAFRC_DIR} ~/.gEDA/gafrc)
+set -e
 
-if [ "$INSTALLED_GAFRC" == "no" ]; then
+if [ "no$INSTALLED_GAFRC" == "no" ]; then
 	echo "Adding this symbol-library to your system"
 	dover cat dot/gafrc >> ~/.gEDA/gafrc
 else
