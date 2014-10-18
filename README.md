@@ -56,7 +56,7 @@ of you project. Often the border between a sub-module and another sheet in a
 larger collection of drawings is blurred. Therefore my recommendation is to
 not compartmentalize between then but to put all in the same directory.
 
-In the local cafrc-file you put two entries for example something like the
+In the local gafrc-file you put two entries for example something like the
 following:
 
 (component-library "./localsym" "sub-symbols")
