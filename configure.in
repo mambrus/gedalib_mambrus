@@ -1,0 +1,23 @@
+dnl This is Ambrus gedalib configure.in file.
+dnl Process this file with autoconf to produce a configure script.
+
+AC_INIT(ambrus_gedalib, [0.1.0])
+AC_MSG_NOTICE([<<< Running configure for $PACKAGE_NAME version $PACKAGE_VERSION >>>])
+
+AC_CONFIG_AUX_DIR(.)
+
+GEDALIB_MAIN(.)
+dnl AC_INCLUDES_DEFAULT ([HAVE_UINTPTR_T]) GAH! How to use this??
+
+dnl Change files in need of change
+AC_OUTPUT(dot/gafrc)
+
+dnl If build out of source, copy all Makefiles so that '-F Makefile-gnu'
+dnl isn't needed to pass to make
+
+if test "X${BUILD_ROOT}" != "X${GEDALIB_PATH}"; then
+	AC_MSG_NOTICE([+++ Out of source configure detected (good).])
+	AC_MSG_NOTICE([    Build-directory prepared with needed files and structure])
+	pushd "${GEDALIB_PATH}"
+	popd
+fi

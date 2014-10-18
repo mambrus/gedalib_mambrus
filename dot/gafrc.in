@@ -1,1 +1,1 @@
-(component-library "@THIS_DIR@/sym" "Ambrus")
+(component-library "@GEDALIB_PATH@/sym" "Ambrus")

@@ -1,6 +1,10 @@
 *.*~
 #Autoproduced by autoconf
 dot/gafrc
+autom4te.cache
+config.log
+config.status
+configure
 #Produced by geda-tools
 *.save
 *.net
