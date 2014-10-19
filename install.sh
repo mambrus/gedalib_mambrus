@@ -21,35 +21,63 @@ set -o pipefail
 autogen.sh
 configure
 
+NO_PREV_GAFRC="No"
+
 if ! [ -d ~/.gEDA ]; then
 	mkdir ~/.gEDA
+	NO_PREV_GAFRC="Yes"
 fi
 
 if ! [ -f ~/.gEDA/gafrc ]; then
 	touch ~/.gEDA/gafrc
+	NO_PREV_GAFRC="Yes"
 fi
 
 echo "* Installing user-wide [gafrc]"
-F=~/.gEDA/gnetlistrc
-GAFRC_DIR=$(cat dot/gafrc | tr '"' ' ' | awk '{print $2}')
+# Fix prerequisite
+F=~/.gEDA/gafrc
 if [ -L $F ]; then
 	#If link, make sure it's not broken
 	if readlink -q $F >/dev/null ; then
 		echo "$F: is a bad link. Replacing with fresh file"
-		dover rm -f $F
+		dover $F ${F}_BADLINK_${TS}.bak
 		dover touch $F
+		NO_PREV_GAFRC="Yes"
 	fi
 fi
-set +e
-INSTALLED_GAFRC=$(grep ${GAFRC_DIR} ~/.gEDA/gafrc)
-set -e
 
-if [ "no$INSTALLED_GAFRC" == "no" ]; then
-	echo "Adding this symbol-library to your system"
-	cat dot/gafrc >> ~/.gEDA/gafrc
+# Component libraries adding, both specific directories and
+# search-directories in one go. 
+# Arg #1 is the type of search in ./dot/gafrc
+function install_gafrc_path() {
+	local SEARCH_FOR=$1
+
+	for SYM_LIB in $(
+		grep -vE '^;' dot/gafrc | \
+		grep "${SEARCH_FOR}" | \
+		tr '"' ' ' | \
+		awk '{print $2}'
+	); do
+		echo "  Test for installing ${SYM_LIB}"
+		set +e
+		INSTALLED_GAFRC=$(grep ${SYM_LIB} $F | grep -vE '^;')
+		set -e
+
+		if [ "no$INSTALLED_GAFRC" == "no" ]; then
+			echo "  Adding this symbol-library to your user-config"
+			grep  ${SYM_LIB} dot/gafrc | grep -vE '^;' >> $F
+		else
+			echo "  User-config already knows about this library."
+			echo "  Skipping modifying $(echo $F)"
+		fi
+	done
+}
+
+if [ "x${NO_PREV_GAFRC}" == "xYes"  ]; then
+	dover cp dot/gafrc ~/.gEDA/gafrc
 else
-	echo "System already knows about this library."
-	echo "Skipping modifying $(echo ~/.gEDA/gafrc)"
+	install_gafrc_path "component-library"
+	install_gafrc_path "source-library"
 fi
 
 function install_rc() {

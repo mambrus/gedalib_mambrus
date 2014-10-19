@@ -6,10 +6,10 @@ Directory & file structure:
 
 ### sym
 symbols root directory. Contains either symbols with extension sym or
-sub-category symbols.
+sub-directories with more symbols.
 
 #### any-dirname
-sub-category directory
+sub-category directory. The name of the directory indicates what's in it.
 
 #### any-filename.sym
 A symbol
@@ -37,13 +37,11 @@ To use:
 -------
 
 * To use this library, clone it somewhere
-* In your ~/.gEDA/gafrc
+* Run the script found in this directory:
+    install.sh
+* For further reading about configuring gEDA, see [gEDA config](http://wiki.geda-project.org/geda:gschem_ug:config)
 
-    (component-library "/complete/path/to/this/gedalib/sym" "AmbrusLib")
-    (component-library "/complete/path/to/this/gedalib/sub/sym" "AmbrusSub-mods")
-    (source-library "/complete/path/to/this/gedalib/sub/src")
-
-* __Note:__ gEDA does not accept environment variables in search paths.
+ __Note:__ gEDA does not accept environment variables in search paths.
 
 Hints:
 ------

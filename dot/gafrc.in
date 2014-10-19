@@ -1,1 +1,4 @@
-(component-library "@GEDALIB_PATH@/sym" "Ambrus")
+;; For details about configuring gEDA, please see
+;; http://wiki.geda-project.org/geda:gschem_ug:config
+(component-library-search "@GEDALIB_PATH@/sym" "mambrus-symlib")
+(source-library "@GEDALIB_PATH@/src")
