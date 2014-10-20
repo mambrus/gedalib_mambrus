@@ -18,6 +18,40 @@ set -e
 set -u
 set -o pipefail
 
+# Workaround expanding (component-library-search) into (component-library)
+# as at least gschem 1.6.2 does not support it. It should be backwards
+# compatible so we can use result for newer versions as well (result should
+# be identical).
+
+cp dot/gafrc.ac dot/gafrc.in
+
+ROOTS=$(grep component-library-search dot/gafrc.ac | \
+	tr '"' ' '  | \
+	awk '{print $2}' | \
+	cut -f2 -d"/")
+
+for R in "${ROOTS}"; do
+	echo "           +++ Expanding sub-symbol paths under [$R]"
+	ROOT_NAME=$(cat dot/gafrc.in | \
+		grep "@GEDALIB_PATH@" | \
+		tr '(")' ' ' | \
+		grep $R | \
+		awk '{print $3}')
+	PATHS_TO_EXPAND=$(for F in $(find $R -name "*.sym"); do dirname $F; done | sort -u)
+
+	# Remove original expanding line
+	sed -ie '/component-library-search.*@GEDALIB_PATH@\/'$R'/d' dot/gafrc.in
+
+	# Expand
+	for P in $PATHS_TO_EXPAND; do
+		NAME=""
+		NAME=$(echo $P | sed -E 's/^'$R'\///')
+		NAME="mambrus-symlib/$NAME"
+		echo "           +++ Adding symbols [$P]@[$NAME]"
+		echo "(component-library \"@GEDALIB_PATH@/$P\" \"$NAME\")" >> dot/gafrc.in
+	done
+done
+
 autogen.sh
 configure
 

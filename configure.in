@@ -7,7 +7,6 @@ AC_MSG_NOTICE([<<< Running configure for $PACKAGE_NAME version $PACKAGE_VERSION 
 AC_CONFIG_AUX_DIR(.)
 
 GEDALIB_MAIN(.)
-dnl AC_INCLUDES_DEFAULT ([HAVE_UINTPTR_T]) GAH! How to use this??
 
 dnl Change files in need of change
 AC_OUTPUT(dot/gafrc)
